@@ -1,3 +1,3 @@
 
-let data: any = {"defaultData":{"Books":[{"Title":"Harry Potter and the Sorcerer's Stone","Author":"J.K. Rowling","Genre":"Fantasy","BookCover":"<image_link>"},{"Title":"To Kill a Mockingbird","Author":"Harper Lee","Genre":"Classic","BookCover":"<image_link>"},{"Title":"1984","Author":"George Orwell","Genre":"Dystopian","BookCover":"<image_link>"}],"Authors":[{"Name":"J.K. Rowling","Books":["Harry Potter and the Sorcerer's Stone"]},{"Name":"Harper Lee","Books":["To Kill a Mockingbird"]},{"Name":"George Orwell","Books":["1984"]}],"Genres":[{"Category":"Fantasy"},{"Category":"Classic"},{"Category":"Dystopian"}]}};
+let data: any = {"defaultData":{}};
 export default data;
