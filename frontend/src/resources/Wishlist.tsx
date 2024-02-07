@@ -73,7 +73,6 @@ export const WishlistCreate = () => (
                                         <ReferenceInput source="userId"  reference="Users"   />
 <ReferenceInput source="cardId"  reference="Cards"   />
 <DateInput source="insertedDate"   />
-<NumberInput source="id"   disabled/>
                                     </SimpleForm>
                                   </Create>
                                 );
