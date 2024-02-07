@@ -73,7 +73,6 @@ export const InventoryCreate = () => (
                                         <ReferenceInput source="userId"  reference="Users"   />
 <ReferenceInput source="cardId"  reference="Cards"   />
 <DateInput source="recordedDate"   />
-<NumberInput source="id"   disabled/>
                                     </SimpleForm>
                                   </Create>
                                 );
