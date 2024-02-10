@@ -6,46 +6,46 @@ export class CustomersEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({nullable: true})
-customerId: string;
+  @Column("integer",{nullable: true})
+customerId: number;
 
-@Column({nullable: true})
+@Column("text",{nullable: true})
 email: string;
 
-@Column({nullable: true})
+@Column("text",{nullable: true})
 password: string;
 
-@Column({nullable: true})
+@Column("text",{nullable: true})
 name: string;
 
-@Column({nullable: true})
+@Column("integer",{nullable: true})
 age: number;
 
-@Column({nullable: true})
+@Column("text",{nullable: true})
 gender: string;
 
-@Column({nullable: true})
+@Column("real",{nullable: true})
 weight: number;
 
-@Column({nullable: true})
+@Column("real",{nullable: true})
 height: number;
 
-@Column({nullable: true})
+@Column("text",{nullable: true})
 healthConditions: string;
 
-@Column({nullable: true})
+@Column("text",{nullable: true})
 goals: string;
 
-@Column({nullable: true})
+@Column("text",{nullable: true})
 dietaryPreferences: string;
 
-@Column({nullable: true})
+@Column("text",{nullable: true})
 billingAddress: string;
 
-@Column({nullable: true})
+@Column("text",{nullable: true})
 country: string;
 
-@Column({nullable: true})
+@Column("text",{nullable: true})
 phone: string;
 
 
