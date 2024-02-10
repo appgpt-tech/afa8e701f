@@ -23,14 +23,24 @@ import {
   //Input controls
   BooleanInput,
   DateInput,
-  //EmailInput,
+  EmailInput,
   ImageInput,
   NumberInput,
   ReferenceInput,
   TextInput,
-  //UrlInput,
+  UrlInput,
+  PasswordInput
 } from "react-admin";
 import { useRecordContext } from "react-admin";
+const ReadOnlyPasswordField = ({ record, source }) => {
+
+  // You can customize the way you display the password here, e.g., mask it with asterisks
+  const maskedPassword =  '********';
+
+  return (
+      <span>{maskedPassword}</span>
+  );
+};
 const ListActions = () => (
     <TopToolbar>
         <FilterButton />
@@ -47,14 +57,13 @@ const WorkoutsTitle = () => {
 export const WorkoutsList = () => (
       <List actions={<ListActions  />} filters={ResourceFilters} >
         <DatagridConfigurable>
-          <TextField source="workoutId" />
+          <NumberField source="workoutId" />
 <ReferenceField source="customerId" reference="Customers"  />
 <TextField source="type" />
 <NumberField source="duration" />
 <TextField source="intensity" />
 <NumberField source="caloriesBurned" />
-<DateField source="date" />
-<NumberField source="id" /><EditButton />
+<DateField source="date" /><EditButton />
 
         </DatagridConfigurable>
       </List>
@@ -63,14 +72,13 @@ export const WorkoutsList = () => (
 export const WorkoutsEdit = () => (
                     <Edit title={<WorkoutsTitle />}>
                       <SimpleForm>
-                          <TextInput source="workoutId"   />
+                          <NumberInput source="workoutId"   />
 <ReferenceInput source="customerId"  reference="Customers"   />
 <TextInput source="type"   />
 <NumberInput source="duration"   />
 <TextInput source="intensity"   />
 <NumberInput source="caloriesBurned"   />
 <DateInput source="date"   />
-<NumberInput source="id"   disabled/>
                       </SimpleForm>
                     </Edit>
                   );
@@ -78,7 +86,7 @@ export const WorkoutsEdit = () => (
 export const WorkoutsCreate = () => (
                                   <Create>
                                     <SimpleForm>
-                                        <TextInput source="workoutId"   />
+                                        <NumberInput source="workoutId"   />
 <ReferenceInput source="customerId"  reference="Customers"   />
 <TextInput source="type"   />
 <NumberInput source="duration"   />
