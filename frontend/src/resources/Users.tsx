@@ -23,14 +23,24 @@ import {
   //Input controls
   BooleanInput,
   DateInput,
-  //EmailInput,
+  EmailInput,
   ImageInput,
   NumberInput,
   ReferenceInput,
   TextInput,
-  //UrlInput,
+  UrlInput,
+  PasswordInput
 } from "react-admin";
 import { useRecordContext } from "react-admin";
+const ReadOnlyPasswordField = ({ record, source }) => {
+
+  // You can customize the way you display the password here, e.g., mask it with asterisks
+  const maskedPassword =  '********';
+
+  return (
+      <span>{maskedPassword}</span>
+  );
+};
 const ListActions = () => (
     <TopToolbar>
         <FilterButton />
@@ -47,10 +57,11 @@ const UsersTitle = () => {
 export const UsersList = () => (
       <List actions={<ListActions  />} filters={ResourceFilters} >
         <DatagridConfigurable>
-          <TextField source="userId" />
-<TextField source="email" />
+          <NumberField source="userId" />
 <TextField source="name" />
-<NumberField source="id" /><EditButton />
+<EmailField source="email" />
+<ReadOnlyPasswordField source="password" />
+<TextField source="role" /><EditButton />
 
         </DatagridConfigurable>
       </List>
@@ -59,10 +70,11 @@ export const UsersList = () => (
 export const UsersEdit = () => (
                     <Edit title={<UsersTitle />}>
                       <SimpleForm>
-                          <TextInput source="userId"   />
-<TextInput source="email"   />
+                          <NumberInput source="userId"   />
 <TextInput source="name"   />
-<NumberInput source="id"   disabled/>
+<TextInput source="email"   />
+<PasswordInput source="password"   />
+<TextInput source="role"   />
                       </SimpleForm>
                     </Edit>
                   );
@@ -70,15 +82,19 @@ export const UsersEdit = () => (
 export const UsersCreate = () => (
                                   <Create>
                                     <SimpleForm>
-                                        <TextInput source="userId"   />
-<TextInput source="email"   />
+                                        <NumberInput source="userId"   />
 <TextInput source="name"   />
+<TextInput source="email"   />
+<PasswordInput source="password"   />
+<TextInput source="role"   />
                                     </SimpleForm>
                                   </Create>
                                 );
 
 const ResourceFilters = [
       <TextInput source="q" label="Search" alwaysOn />,
+,
+,
 ,
 ,
 ,
