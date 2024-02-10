@@ -23,14 +23,24 @@ import {
   //Input controls
   BooleanInput,
   DateInput,
-  //EmailInput,
+  EmailInput,
   ImageInput,
   NumberInput,
   ReferenceInput,
   TextInput,
-  //UrlInput,
+  UrlInput,
+  PasswordInput
 } from "react-admin";
 import { useRecordContext } from "react-admin";
+const ReadOnlyPasswordField = ({ record, source }) => {
+
+  // You can customize the way you display the password here, e.g., mask it with asterisks
+  const maskedPassword =  '********';
+
+  return (
+      <span>{maskedPassword}</span>
+  );
+};
 const ListActions = () => (
     <TopToolbar>
         <FilterButton />
@@ -47,14 +57,13 @@ const NutritionTitle = () => {
 export const NutritionList = () => (
       <List actions={<ListActions  />} filters={ResourceFilters} >
         <DatagridConfigurable>
-          <TextField source="mealId" />
+          <NumberField source="mealId" />
 <ReferenceField source="customerId" reference="Customers"  />
 <TextField source="foodItem" />
 <NumberField source="quantity" />
 <NumberField source="calories" />
 <TextField source="macronutrients" />
-<DateField source="date" />
-<NumberField source="id" /><EditButton />
+<DateField source="date" /><EditButton />
 
         </DatagridConfigurable>
       </List>
@@ -63,14 +72,13 @@ export const NutritionList = () => (
 export const NutritionEdit = () => (
                     <Edit title={<NutritionTitle />}>
                       <SimpleForm>
-                          <TextInput source="mealId"   />
+                          <NumberInput source="mealId"   />
 <ReferenceInput source="customerId"  reference="Customers"   />
 <TextInput source="foodItem"   />
 <NumberInput source="quantity"   />
 <NumberInput source="calories"   />
 <TextInput source="macronutrients"   />
 <DateInput source="date"   />
-<NumberInput source="id"   disabled/>
                       </SimpleForm>
                     </Edit>
                   );
@@ -78,7 +86,7 @@ export const NutritionEdit = () => (
 export const NutritionCreate = () => (
                                   <Create>
                                     <SimpleForm>
-                                        <TextInput source="mealId"   />
+                                        <NumberInput source="mealId"   />
 <ReferenceInput source="customerId"  reference="Customers"   />
 <TextInput source="foodItem"   />
 <NumberInput source="quantity"   />
