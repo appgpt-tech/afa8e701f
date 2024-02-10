@@ -23,14 +23,24 @@ import {
   //Input controls
   BooleanInput,
   DateInput,
-  //EmailInput,
+  EmailInput,
   ImageInput,
   NumberInput,
   ReferenceInput,
   TextInput,
-  //UrlInput,
+  UrlInput,
+  PasswordInput
 } from "react-admin";
 import { useRecordContext } from "react-admin";
+const ReadOnlyPasswordField = ({ record, source }) => {
+
+  // You can customize the way you display the password here, e.g., mask it with asterisks
+  const maskedPassword =  '********';
+
+  return (
+      <span>{maskedPassword}</span>
+  );
+};
 const ListActions = () => (
     <TopToolbar>
         <FilterButton />
@@ -47,9 +57,9 @@ const CustomersTitle = () => {
 export const CustomersList = () => (
       <List actions={<ListActions  />} filters={ResourceFilters} >
         <DatagridConfigurable>
-          <TextField source="customerId" />
-<TextField source="email" />
-<TextField source="password" />
+          <NumberField source="customerId" />
+<EmailField source="email" />
+<ReadOnlyPasswordField source="password" />
 <TextField source="name" />
 <NumberField source="age" />
 <TextField source="gender" />
@@ -60,8 +70,7 @@ export const CustomersList = () => (
 <TextField source="dietaryPreferences" />
 <TextField source="billingAddress" />
 <TextField source="country" />
-<TextField source="phone" />
-<NumberField source="id" /><EditButton />
+<TextField source="phone" /><EditButton />
 
         </DatagridConfigurable>
       </List>
@@ -70,9 +79,9 @@ export const CustomersList = () => (
 export const CustomersEdit = () => (
                     <Edit title={<CustomersTitle />}>
                       <SimpleForm>
-                          <TextInput source="customerId"   />
+                          <NumberInput source="customerId"   />
 <TextInput source="email"   />
-<TextInput source="password"   />
+<PasswordInput source="password"   />
 <TextInput source="name"   />
 <NumberInput source="age"   />
 <TextInput source="gender"   />
@@ -84,7 +93,6 @@ export const CustomersEdit = () => (
 <TextInput source="billingAddress"   />
 <TextInput source="country"   />
 <TextInput source="phone"   />
-<NumberInput source="id"   disabled/>
                       </SimpleForm>
                     </Edit>
                   );
@@ -92,9 +100,9 @@ export const CustomersEdit = () => (
 export const CustomersCreate = () => (
                                   <Create>
                                     <SimpleForm>
-                                        <TextInput source="customerId"   />
+                                        <NumberInput source="customerId"   />
 <TextInput source="email"   />
-<TextInput source="password"   />
+<PasswordInput source="password"   />
 <TextInput source="name"   />
 <NumberInput source="age"   />
 <TextInput source="gender"   />
