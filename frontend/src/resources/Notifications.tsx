@@ -23,14 +23,24 @@ import {
   //Input controls
   BooleanInput,
   DateInput,
-  //EmailInput,
+  EmailInput,
   ImageInput,
   NumberInput,
   ReferenceInput,
   TextInput,
-  //UrlInput,
+  UrlInput,
+  PasswordInput
 } from "react-admin";
 import { useRecordContext } from "react-admin";
+const ReadOnlyPasswordField = ({ record, source }) => {
+
+  // You can customize the way you display the password here, e.g., mask it with asterisks
+  const maskedPassword =  '********';
+
+  return (
+      <span>{maskedPassword}</span>
+  );
+};
 const ListActions = () => (
     <TopToolbar>
         <FilterButton />
@@ -47,13 +57,12 @@ const NotificationsTitle = () => {
 export const NotificationsList = () => (
       <List actions={<ListActions  />} filters={ResourceFilters} >
         <DatagridConfigurable>
-          <TextField source="notificationId" />
+          <NumberField source="notificationId" />
 <ReferenceField source="customerId" reference="Customers"  />
 <TextField source="type" />
 <TextField source="message" />
 <DateField source="dateScheduled" />
-<TextField source="status" />
-<NumberField source="id" /><EditButton />
+<TextField source="status" /><EditButton />
 
         </DatagridConfigurable>
       </List>
@@ -62,13 +71,12 @@ export const NotificationsList = () => (
 export const NotificationsEdit = () => (
                     <Edit title={<NotificationsTitle />}>
                       <SimpleForm>
-                          <TextInput source="notificationId"   />
+                          <NumberInput source="notificationId"   />
 <ReferenceInput source="customerId"  reference="Customers"   />
 <TextInput source="type"   />
 <TextInput source="message"   />
 <DateInput source="dateScheduled"   />
 <TextInput source="status"   />
-<NumberInput source="id"   disabled/>
                       </SimpleForm>
                     </Edit>
                   );
@@ -76,7 +84,7 @@ export const NotificationsEdit = () => (
 export const NotificationsCreate = () => (
                                   <Create>
                                     <SimpleForm>
-                                        <TextInput source="notificationId"   />
+                                        <NumberInput source="notificationId"   />
 <ReferenceInput source="customerId"  reference="Customers"   />
 <TextInput source="type"   />
 <TextInput source="message"   />
