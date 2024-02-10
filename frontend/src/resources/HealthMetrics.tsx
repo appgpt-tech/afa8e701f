@@ -23,14 +23,24 @@ import {
   //Input controls
   BooleanInput,
   DateInput,
-  //EmailInput,
+  EmailInput,
   ImageInput,
   NumberInput,
   ReferenceInput,
   TextInput,
-  //UrlInput,
+  UrlInput,
+  PasswordInput
 } from "react-admin";
 import { useRecordContext } from "react-admin";
+const ReadOnlyPasswordField = ({ record, source }) => {
+
+  // You can customize the way you display the password here, e.g., mask it with asterisks
+  const maskedPassword =  '********';
+
+  return (
+      <span>{maskedPassword}</span>
+  );
+};
 const ListActions = () => (
     <TopToolbar>
         <FilterButton />
@@ -47,13 +57,12 @@ const HealthMetricsTitle = () => {
 export const HealthMetricsList = () => (
       <List actions={<ListActions  />} filters={ResourceFilters} >
         <DatagridConfigurable>
-          <TextField source="metricId" />
+          <NumberField source="metricId" />
 <ReferenceField source="customerId" reference="Customers"  />
 <TextField source="type" />
 <NumberField source="value" />
 <TextField source="unit" />
-<DateField source="date" />
-<NumberField source="id" /><EditButton />
+<DateField source="date" /><EditButton />
 
         </DatagridConfigurable>
       </List>
@@ -62,13 +71,12 @@ export const HealthMetricsList = () => (
 export const HealthMetricsEdit = () => (
                     <Edit title={<HealthMetricsTitle />}>
                       <SimpleForm>
-                          <TextInput source="metricId"   />
+                          <NumberInput source="metricId"   />
 <ReferenceInput source="customerId"  reference="Customers"   />
 <TextInput source="type"   />
 <NumberInput source="value"   />
 <TextInput source="unit"   />
 <DateInput source="date"   />
-<NumberInput source="id"   disabled/>
                       </SimpleForm>
                     </Edit>
                   );
@@ -76,7 +84,7 @@ export const HealthMetricsEdit = () => (
 export const HealthMetricsCreate = () => (
                                   <Create>
                                     <SimpleForm>
-                                        <TextInput source="metricId"   />
+                                        <NumberInput source="metricId"   />
 <ReferenceInput source="customerId"  reference="Customers"   />
 <TextInput source="type"   />
 <NumberInput source="value"   />
