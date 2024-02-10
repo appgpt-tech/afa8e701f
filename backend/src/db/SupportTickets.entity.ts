@@ -6,29 +6,26 @@ export class SupportTicketsEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({nullable: true})
-ticketId: string;
+  @Column("integer",{nullable: true})
+ticketId: number;
 
-@Column({nullable: true})
+@Column("integer",{nullable: true})
 userId: number;
 
-@Column({nullable: true})
+@Column("integer",{nullable: true})
 customerId: number;
 
-@Column({nullable: true})
+@Column("text",{nullable: true})
 description: string;
 
-@Column({nullable: true})
+@Column("text",{nullable: true})
 status: string;
 
-@Column({nullable: true})
+@Column("date",{nullable: true})
 creationDate: Date;
 
-@Column({nullable: true})
+@Column("date",{nullable: true})
 resolutionDate: Date;
-
-@Column({nullable: true})
-serialNo: number;
 
 
 }
