@@ -23,14 +23,24 @@ import {
   //Input controls
   BooleanInput,
   DateInput,
-  //EmailInput,
+  EmailInput,
   ImageInput,
   NumberInput,
   ReferenceInput,
   TextInput,
-  //UrlInput,
+  UrlInput,
+  PasswordInput
 } from "react-admin";
 import { useRecordContext } from "react-admin";
+const ReadOnlyPasswordField = ({ record, source }) => {
+
+  // You can customize the way you display the password here, e.g., mask it with asterisks
+  const maskedPassword =  '********';
+
+  return (
+      <span>{maskedPassword}</span>
+  );
+};
 const ListActions = () => (
     <TopToolbar>
         <FilterButton />
@@ -47,15 +57,13 @@ const SupportTicketsTitle = () => {
 export const SupportTicketsList = () => (
       <List actions={<ListActions  />} filters={ResourceFilters} >
         <DatagridConfigurable>
-          <TextField source="ticketId" />
+          <NumberField source="ticketId" />
 <ReferenceField source="userId" reference="Users"  />
 <ReferenceField source="customerId" reference="Customers"  />
-<TextField source="description" />
+
 <TextField source="status" />
 <DateField source="creationDate" />
-<DateField source="resolutionDate" />
-<NumberField source="serialNo" />
-<NumberField source="id" /><EditButton />
+<DateField source="resolutionDate" /><EditButton />
 
         </DatagridConfigurable>
       </List>
@@ -64,15 +72,13 @@ export const SupportTicketsList = () => (
 export const SupportTicketsEdit = () => (
                     <Edit title={<SupportTicketsTitle />}>
                       <SimpleForm>
-                          <TextInput source="ticketId"   />
+                          <NumberInput source="ticketId"   />
 <ReferenceInput source="userId"  reference="Users"   />
 <ReferenceInput source="customerId"  reference="Customers"   />
 <TextInput source="description"   />
 <TextInput source="status"   />
 <DateInput source="creationDate"   />
 <DateInput source="resolutionDate"   />
-<NumberInput source="serialNo"   />
-<NumberInput source="id"   disabled/>
                       </SimpleForm>
                     </Edit>
                   );
@@ -80,14 +86,13 @@ export const SupportTicketsEdit = () => (
 export const SupportTicketsCreate = () => (
                                   <Create>
                                     <SimpleForm>
-                                        <TextInput source="ticketId"   />
+                                        <NumberInput source="ticketId"   />
 <ReferenceInput source="userId"  reference="Users"   />
 <ReferenceInput source="customerId"  reference="Customers"   />
 <TextInput source="description"   />
 <TextInput source="status"   />
 <DateInput source="creationDate"   />
 <DateInput source="resolutionDate"   />
-<NumberInput source="serialNo"   />
                                     </SimpleForm>
                                   </Create>
                                 );
@@ -97,7 +102,6 @@ const ResourceFilters = [
 ,
 <ReferenceInput source="userId" label="userId" reference="Users"   alwaysOn/>,
 <ReferenceInput source="customerId" label="customerId" reference="Customers"   alwaysOn/>,
-,
 ,
 ,
 ,
