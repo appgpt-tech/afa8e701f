@@ -6,14 +6,14 @@ export class InventoryEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({nullable: true})
-userId: number;
+  @Column("integer",{nullable: true})
+productId: number;
 
-@Column({nullable: true})
-cardId: number;
+@Column("integer",{nullable: true})
+quantity: number;
 
-@Column({nullable: true})
-recordedDate: Date;
+@Column("integer",{nullable: true})
+lowStockThreshold: number;
 
 
 }
