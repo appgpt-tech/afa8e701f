@@ -32,6 +32,32 @@ const fieldConfig = {
     "datatype": "Integer"
   }
 ],
+Vendors: [
+  {
+    "field": "vendorId",
+    "datatype": "Integer"
+  },
+  {
+    "field": "companyName",
+    "datatype": "String"
+  },
+  {
+    "field": "contactName",
+    "datatype": "String"
+  },
+  {
+    "field": "email",
+    "datatype": "String"
+  },
+  {
+    "field": "password",
+    "datatype": "String"
+  },
+  {
+    "field": "id",
+    "datatype": "Integer"
+  }
+],
 Customers: [
   {
     "field": "customerId",
@@ -50,35 +76,11 @@ Customers: [
     "datatype": "String"
   },
   {
-    "field": "age",
-    "datatype": "Integer"
-  },
-  {
-    "field": "gender",
-    "datatype": "String"
-  },
-  {
-    "field": "weight",
-    "datatype": "Real"
-  },
-  {
-    "field": "height",
-    "datatype": "Real"
-  },
-  {
-    "field": "healthConditions",
-    "datatype": "String"
-  },
-  {
-    "field": "goals",
-    "datatype": "String"
-  },
-  {
-    "field": "dietaryPreferences",
-    "datatype": "String"
-  },
-  {
     "field": "billingAddress",
+    "datatype": "String"
+  },
+  {
+    "field": "defaultShippingAddress",
     "datatype": "String"
   },
   {
@@ -90,81 +92,129 @@ Customers: [
     "datatype": "String"
   },
   {
-    "field": "id",
+    "field": "cartId",
     "datatype": "Integer"
-  }
-],
-Workouts: [
-  {
-    "field": "workoutId",
-    "datatype": "Integer"
-  },
-  {
-    "field": "customerId",
-    "datatype": "Integer"
-  },
-  {
-    "field": "type",
-    "datatype": "String"
-  },
-  {
-    "field": "duration",
-    "datatype": "Real"
-  },
-  {
-    "field": "intensity",
-    "datatype": "String"
-  },
-  {
-    "field": "caloriesBurned",
-    "datatype": "Real"
-  },
-  {
-    "field": "date",
-    "datatype": "DateTime"
   },
   {
     "field": "id",
     "datatype": "Integer"
   }
 ],
-Nutrition: [
+Inventory: [
   {
-    "field": "mealId",
+    "field": "productId",
     "datatype": "Integer"
-  },
-  {
-    "field": "customerId",
-    "datatype": "Integer"
-  },
-  {
-    "field": "foodItem",
-    "datatype": "String"
   },
   {
     "field": "quantity",
-    "datatype": "Real"
+    "datatype": "Integer"
   },
   {
-    "field": "calories",
-    "datatype": "Real"
-  },
-  {
-    "field": "macronutrients",
-    "datatype": "String"
-  },
-  {
-    "field": "date",
-    "datatype": "DateTime"
+    "field": "lowStockThreshold",
+    "datatype": "Integer"
   },
   {
     "field": "id",
     "datatype": "Integer"
   }
 ],
-HealthMetrics: [
+Products: [
   {
-    "field": "metricId",
+    "field": "productId",
+    "datatype": "Integer"
+  },
+  {
+    "field": "vendorId",
+    "datatype": "Integer"
+  },
+  {
+    "field": "name",
+    "datatype": "String"
+  },
+  {
+    "field": "price",
+    "datatype": "Real"
+  },
+  {
+    "field": "weight",
+    "datatype": "Real"
+  },
+  {
+    "field": "description",
+    "datatype": "String"
+  },
+  {
+    "field": "thumbnail",
+    "datatype": "String"
+  },
+  {
+    "field": "image",
+    "datatype": "String"
+  },
+  {
+    "field": "category",
+    "datatype": "Integer"
+  },
+  {
+    "field": "createDate",
+    "datatype": "DateTime"
+  },
+  {
+    "field": "stock",
+    "datatype": "Integer"
+  },
+  {
+    "field": "id",
+    "datatype": "Integer"
+  }
+],
+ProductCategories: [
+  {
+    "field": "categoryId",
+    "datatype": "Integer"
+  },
+  {
+    "field": "productId",
+    "datatype": "Integer"
+  },
+  {
+    "field": "description",
+    "datatype": "String"
+  },
+  {
+    "field": "id",
+    "datatype": "Integer"
+  }
+],
+Discounts: [
+  {
+    "field": "productId",
+    "datatype": "Integer"
+  },
+  {
+    "field": "discountName",
+    "datatype": "String"
+  },
+  {
+    "field": "description",
+    "datatype": "String"
+  },
+  {
+    "field": "discountAmount",
+    "datatype": "Real"
+  },
+  {
+    "field": "discountPercent",
+    "datatype": "Real"
+  },
+  {
+    "field": "id",
+    "datatype": "Integer"
+  }
+],
+ShoppingCart: [
+  {
+    "field": "cartId",
     "datatype": "Integer"
   },
   {
@@ -172,29 +222,25 @@ HealthMetrics: [
     "datatype": "Integer"
   },
   {
-    "field": "type",
-    "datatype": "String"
+    "field": "productId",
+    "datatype": "Integer"
   },
   {
-    "field": "value",
+    "field": "price",
     "datatype": "Real"
   },
   {
-    "field": "unit",
-    "datatype": "String"
-  },
-  {
-    "field": "date",
-    "datatype": "DateTime"
+    "field": "quantity",
+    "datatype": "Integer"
   },
   {
     "field": "id",
     "datatype": "Integer"
   }
 ],
-Notifications: [
+Orders: [
   {
-    "field": "notificationId",
+    "field": "orderId",
     "datatype": "Integer"
   },
   {
@@ -202,20 +248,130 @@ Notifications: [
     "datatype": "Integer"
   },
   {
-    "field": "type",
+    "field": "totalAmount",
+    "datatype": "Real"
+  },
+  {
+    "field": "vat",
+    "datatype": "Real"
+  },
+  {
+    "field": "productTotalAmount",
+    "datatype": "Real"
+  },
+  {
+    "field": "shippingCost",
+    "datatype": "Real"
+  },
+  {
+    "field": "shippingAddress",
     "datatype": "String"
   },
   {
-    "field": "message",
+    "field": "orderAddress",
     "datatype": "String"
   },
   {
-    "field": "dateScheduled",
+    "field": "orderEmail",
+    "datatype": "String"
+  },
+  {
+    "field": "orderDate",
     "datatype": "DateTime"
   },
   {
-    "field": "status",
+    "field": "orderStatus",
     "datatype": "String"
+  },
+  {
+    "field": "trackingNo",
+    "datatype": "String"
+  },
+  {
+    "field": "id",
+    "datatype": "Integer"
+  }
+],
+OrderDetails: [
+  {
+    "field": "orderId",
+    "datatype": "Integer"
+  },
+  {
+    "field": "productId",
+    "datatype": "Integer"
+  },
+  {
+    "field": "price",
+    "datatype": "Real"
+  },
+  {
+    "field": "quantity",
+    "datatype": "Integer"
+  },
+  {
+    "field": "id",
+    "datatype": "Integer"
+  }
+],
+Payments: [
+  {
+    "field": "paymentId",
+    "datatype": "Integer"
+  },
+  {
+    "field": "orderId",
+    "datatype": "Integer"
+  },
+  {
+    "field": "amount",
+    "datatype": "Real"
+  },
+  {
+    "field": "paymentMethod",
+    "datatype": "String"
+  },
+  {
+    "field": "paymentDate",
+    "datatype": "DateTime"
+  },
+  {
+    "field": "paymentStatus",
+    "datatype": "String"
+  },
+  {
+    "field": "id",
+    "datatype": "Integer"
+  }
+],
+Reviews: [
+  {
+    "field": "reviewId",
+    "datatype": "Integer"
+  },
+  {
+    "field": "productId",
+    "datatype": "Integer"
+  },
+  {
+    "field": "customerId",
+    "datatype": "Integer"
+  },
+  {
+    "field": "vendorId",
+    "datatype": "Integer"
+  },
+  {
+    "field": "rating",
+    "datatype": "Real"
+  },
+  {
+    "field": "reviewDetails",
+    "datatype": "String"
+  },
+  {
+    "field": "date",
+    "datatype": "DateTime"
   },
   {
     "field": "id",
