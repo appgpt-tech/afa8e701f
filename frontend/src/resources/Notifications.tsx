@@ -60,7 +60,7 @@ export const NotificationsList = () => (
           <NumberField source="notificationId" />
 <ReferenceField source="customerId" reference="Customers"  />
 <TextField source="type" />
-<TextField source="message" />
+
 <DateField source="dateScheduled" />
 <TextField source="status" /><EditButton />
 
