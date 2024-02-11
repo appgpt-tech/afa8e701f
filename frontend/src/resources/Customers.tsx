@@ -65,10 +65,10 @@ export const CustomersList = () => (
 <TextField source="gender" />
 <NumberField source="weight" />
 <NumberField source="height" />
-<TextField source="healthConditions" />
-<TextField source="goals" />
-<TextField source="dietaryPreferences" />
-<TextField source="billingAddress" />
+
+
+
+
 <TextField source="country" />
 <TextField source="phone" /><EditButton />
 
