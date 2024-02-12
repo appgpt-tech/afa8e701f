@@ -23,14 +23,24 @@ import {
   //Input controls
   BooleanInput,
   DateInput,
-  //EmailInput,
+  EmailInput,
   ImageInput,
   NumberInput,
   ReferenceInput,
   TextInput,
-  //UrlInput,
+  UrlInput,
+  PasswordInput
 } from "react-admin";
 import { useRecordContext } from "react-admin";
+const ReadOnlyPasswordField = ({ record, source }) => {
+
+  // You can customize the way you display the password here, e.g., mask it with asterisks
+  const maskedPassword =  '********';
+
+  return (
+      <span>{maskedPassword}</span>
+  );
+};
 const ListActions = () => (
     <TopToolbar>
         <FilterButton />
@@ -47,15 +57,14 @@ const CardsTitle = () => {
 export const CardsList = () => (
       <List actions={<ListActions  />} filters={ResourceFilters} >
         <DatagridConfigurable>
-          <TextField source="cardId" />
-<ReferenceField source="setid" reference="Sets"  />
+          <NumberField source="cardId" />
+<ReferenceField source="setId" reference="Sets"  />
 <TextField source="cardName" />
 <TextField source="serial" />
 <TextField source="type" />
 <TextField source="rarity" />
 <TextField source="condition" />
-<TextField source="imageurl" />
-<NumberField source="id" /><EditButton />
+<ImageField source="imageUrl" /><EditButton />
 
         </DatagridConfigurable>
       </List>
@@ -64,15 +73,14 @@ export const CardsList = () => (
 export const CardsEdit = () => (
                     <Edit title={<CardsTitle />}>
                       <SimpleForm>
-                          <TextInput source="cardId"   />
-<ReferenceInput source="setid"  reference="Sets"   />
+                          <NumberInput source="cardId"   />
+<ReferenceInput source="setId"  reference="Sets"   />
 <TextInput source="cardName"   />
 <TextInput source="serial"   />
 <TextInput source="type"   />
 <TextInput source="rarity"   />
 <TextInput source="condition"   />
-<TextInput source="imageurl"   />
-<NumberInput source="id"   disabled/>
+<ImageInput source="imageUrl"   />
                       </SimpleForm>
                     </Edit>
                   );
@@ -80,14 +88,14 @@ export const CardsEdit = () => (
 export const CardsCreate = () => (
                                   <Create>
                                     <SimpleForm>
-                                        <TextInput source="cardId"   />
-<ReferenceInput source="setid"  reference="Sets"   />
+                                        <NumberInput source="cardId"   />
+<ReferenceInput source="setId"  reference="Sets"   />
 <TextInput source="cardName"   />
 <TextInput source="serial"   />
 <TextInput source="type"   />
 <TextInput source="rarity"   />
 <TextInput source="condition"   />
-<TextInput source="imageurl"   />
+<ImageInput source="imageUrl"   />
                                     </SimpleForm>
                                   </Create>
                                 );
@@ -95,7 +103,7 @@ export const CardsCreate = () => (
 const ResourceFilters = [
       <TextInput source="q" label="Search" alwaysOn />,
 ,
-<ReferenceInput source="setid" label="setid" reference="Sets"   alwaysOn/>,
+<ReferenceInput source="setId" label="setId" reference="Sets"   alwaysOn/>,
 ,
 ,
 ,
