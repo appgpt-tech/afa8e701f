@@ -23,14 +23,24 @@ import {
   //Input controls
   BooleanInput,
   DateInput,
-  //EmailInput,
+  EmailInput,
   ImageInput,
   NumberInput,
   ReferenceInput,
   TextInput,
-  //UrlInput,
+  UrlInput,
+  PasswordInput
 } from "react-admin";
 import { useRecordContext } from "react-admin";
+const ReadOnlyPasswordField = ({ record, source }) => {
+
+  // You can customize the way you display the password here, e.g., mask it with asterisks
+  const maskedPassword =  '********';
+
+  return (
+      <span>{maskedPassword}</span>
+  );
+};
 const ListActions = () => (
     <TopToolbar>
         <FilterButton />
@@ -47,11 +57,10 @@ const SetsTitle = () => {
 export const SetsList = () => (
       <List actions={<ListActions  />} filters={ResourceFilters} >
         <DatagridConfigurable>
-          <TextField source="setId" />
-<TextField source="setname" />
-<DateField source="releasedate" />
-<NumberField source="totalcards" />
-<NumberField source="id" /><EditButton />
+          <NumberField source="setId" />
+<TextField source="setName" />
+<DateField source="releaseDate" />
+<NumberField source="totalCards" /><EditButton />
 
         </DatagridConfigurable>
       </List>
@@ -60,11 +69,10 @@ export const SetsList = () => (
 export const SetsEdit = () => (
                     <Edit title={<SetsTitle />}>
                       <SimpleForm>
-                          <TextInput source="setId"   />
-<TextInput source="setname"   />
-<DateInput source="releasedate"   />
-<NumberInput source="totalcards"   />
-<NumberInput source="id"   disabled/>
+                          <NumberInput source="setId"   />
+<TextInput source="setName"   />
+<DateInput source="releaseDate"   />
+<NumberInput source="totalCards"   />
                       </SimpleForm>
                     </Edit>
                   );
@@ -72,10 +80,10 @@ export const SetsEdit = () => (
 export const SetsCreate = () => (
                                   <Create>
                                     <SimpleForm>
-                                        <TextInput source="setId"   />
-<TextInput source="setname"   />
-<DateInput source="releasedate"   />
-<NumberInput source="totalcards"   />
+                                        <NumberInput source="setId"   />
+<TextInput source="setName"   />
+<DateInput source="releaseDate"   />
+<NumberInput source="totalCards"   />
                                     </SimpleForm>
                                   </Create>
                                 );
