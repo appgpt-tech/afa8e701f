@@ -32,6 +32,7 @@ import {
   PasswordInput
 } from "react-admin";
 import { useRecordContext } from "react-admin";
+import { Grid } from '@mui/material';
 const ReadOnlyPasswordField = ({ record, source }) => {
 
   // You can customize the way you display the password here, e.g., mask it with asterisks
@@ -51,15 +52,17 @@ const ListActions = () => (
 );
 const UsersTitle = () => {
   const record = useRecordContext();
-  return <span>Users {record ? `"${ record.userId }"` : ""}</span>;
+  return <span>Users {record ? `"${ record.name }"` : ""}</span>;
 };
 
 export const UsersList = () => (
       <List actions={<ListActions  />} filters={ResourceFilters} >
         <DatagridConfigurable>
           <NumberField source="userId" />
+<TextField source="name" />
 <EmailField source="email" />
-<TextField source="name" /><EditButton />
+<ReadOnlyPasswordField source="password" />
+<TextField source="role" /><EditButton />
 
         </DatagridConfigurable>
       </List>
@@ -68,9 +71,18 @@ export const UsersList = () => (
 export const UsersEdit = () => (
                     <Edit title={<UsersTitle />}>
                       <SimpleForm>
-                          <NumberInput source="userId"   />
-<TextInput source="email"   />
-<TextInput source="name"   />
+                        <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 5 }}>
+                          <Grid item xs={4}>
+<NumberInput source="userId"   /></Grid>
+<Grid item xs={4}>
+<TextInput source="name"   /></Grid>
+<Grid item xs={4}>
+<TextInput source="email"   /></Grid>
+<Grid item xs={4}>
+<PasswordInput source="password"   /></Grid>
+<Grid item xs={4}>
+<TextInput source="role"   /></Grid>
+                        </Grid>
                       </SimpleForm>
                     </Edit>
                   );
@@ -78,15 +90,26 @@ export const UsersEdit = () => (
 export const UsersCreate = () => (
                                   <Create>
                                     <SimpleForm>
-                                        <NumberInput source="userId"   />
-<TextInput source="email"   />
-<TextInput source="name"   />
+                                      <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 5 }}>
+                                        <Grid item xs={4}>
+<NumberInput source="userId"   /></Grid>
+<Grid item xs={4}>
+<TextInput source="name"   /></Grid>
+<Grid item xs={4}>
+<TextInput source="email"   /></Grid>
+<Grid item xs={4}>
+<PasswordInput source="password"   /></Grid>
+<Grid item xs={4}>
+<TextInput source="role"   /></Grid>
+                                      </Grid>
                                     </SimpleForm>
                                   </Create>
                                 );
 
 const ResourceFilters = [
       <TextInput source="q" label="Search" alwaysOn />,
+,
+,
 ,
 ,
 ,
