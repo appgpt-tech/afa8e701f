@@ -32,6 +32,7 @@ import {
   PasswordInput
 } from "react-admin";
 import { useRecordContext } from "react-admin";
+import { Grid } from '@mui/material';
 const ReadOnlyPasswordField = ({ record, source }) => {
 
   // You can customize the way you display the password here, e.g., mask it with asterisks
@@ -51,7 +52,7 @@ const ListActions = () => (
 );
 const NutritionTitle = () => {
   const record = useRecordContext();
-  return <span>Nutrition {record ? `"${ record.mealId }"` : ""}</span>;
+  return <span>Nutrition {record ? `"${ record.foodItem }"` : ""}</span>;
 };
 
 export const NutritionList = () => (
@@ -62,7 +63,7 @@ export const NutritionList = () => (
 <TextField source="foodItem" />
 <NumberField source="quantity" />
 <NumberField source="calories" />
-
+<TextField source="macronutrients" />
 <DateField source="date" /><EditButton />
 
         </DatagridConfigurable>
@@ -72,13 +73,22 @@ export const NutritionList = () => (
 export const NutritionEdit = () => (
                     <Edit title={<NutritionTitle />}>
                       <SimpleForm>
-                          <NumberInput source="mealId"   />
-<ReferenceInput source="customerId"  reference="Customers"   />
-<TextInput source="foodItem"   />
-<NumberInput source="quantity"   />
-<NumberInput source="calories"   />
-<TextInput source="macronutrients"   />
-<DateInput source="date"   />
+                        <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 5 }}>
+                          <Grid item xs={4}>
+<NumberInput source="mealId"   /></Grid>
+<Grid item xs={4}>
+<ReferenceInput source="customerId"  reference="Customers"   /></Grid>
+<Grid item xs={4}>
+<TextInput source="foodItem"   /></Grid>
+<Grid item xs={4}>
+<NumberInput source="quantity"   /></Grid>
+<Grid item xs={4}>
+<NumberInput source="calories"   /></Grid>
+<Grid item xs={4}>
+<TextInput source="macronutrients"   /></Grid>
+<Grid item xs={4}>
+<DateInput source="date"   /></Grid>
+                        </Grid>
                       </SimpleForm>
                     </Edit>
                   );
@@ -86,13 +96,22 @@ export const NutritionEdit = () => (
 export const NutritionCreate = () => (
                                   <Create>
                                     <SimpleForm>
-                                        <NumberInput source="mealId"   />
-<ReferenceInput source="customerId"  reference="Customers"   />
-<TextInput source="foodItem"   />
-<NumberInput source="quantity"   />
-<NumberInput source="calories"   />
-<TextInput source="macronutrients"   />
-<DateInput source="date"   />
+                                      <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 5 }}>
+                                        <Grid item xs={4}>
+<NumberInput source="mealId"   /></Grid>
+<Grid item xs={4}>
+<ReferenceInput source="customerId"  reference="Customers"   /></Grid>
+<Grid item xs={4}>
+<TextInput source="foodItem"   /></Grid>
+<Grid item xs={4}>
+<NumberInput source="quantity"   /></Grid>
+<Grid item xs={4}>
+<NumberInput source="calories"   /></Grid>
+<Grid item xs={4}>
+<TextInput source="macronutrients"   /></Grid>
+<Grid item xs={4}>
+<DateInput source="date"   /></Grid>
+                                      </Grid>
                                     </SimpleForm>
                                   </Create>
                                 );
