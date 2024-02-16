@@ -32,6 +32,7 @@ import {
   PasswordInput
 } from "react-admin";
 import { useRecordContext } from "react-admin";
+import { Grid } from '@mui/material';
 const ReadOnlyPasswordField = ({ record, source }) => {
 
   // You can customize the way you display the password here, e.g., mask it with asterisks
@@ -51,7 +52,7 @@ const ListActions = () => (
 );
 const CustomersTitle = () => {
   const record = useRecordContext();
-  return <span>Customers {record ? `"${ record.customerId }"` : ""}</span>;
+  return <span>Customers {record ? `"${ record.name }"` : ""}</span>;
 };
 
 export const CustomersList = () => (
@@ -61,11 +62,16 @@ export const CustomersList = () => (
 <EmailField source="email" />
 <ReadOnlyPasswordField source="password" />
 <TextField source="name" />
+<NumberField source="age" />
+<TextField source="gender" />
+<NumberField source="weight" />
+<NumberField source="height" />
+
+
+
 <TextField source="billingAddress" />
-<TextField source="defaultShippingAddress" />
 <TextField source="country" />
-<TextField source="phone" />
-<ReferenceField source="cartId" reference="ShoppingCart"  /><EditButton />
+<TextField source="phone" /><EditButton />
 
         </DatagridConfigurable>
       </List>
@@ -74,15 +80,36 @@ export const CustomersList = () => (
 export const CustomersEdit = () => (
                     <Edit title={<CustomersTitle />}>
                       <SimpleForm>
-                          <NumberInput source="customerId"   />
-<TextInput source="email"   />
-<PasswordInput source="password"   />
-<TextInput source="name"   />
-<TextInput source="billingAddress"   />
-<TextInput source="defaultShippingAddress"   />
-<TextInput source="country"   />
-<TextInput source="phone"   />
-<ReferenceInput source="cartId"  reference="ShoppingCart"   />
+                        <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 5 }}>
+                          <Grid item xs={4}>
+<NumberInput source="customerId"   /></Grid>
+<Grid item xs={4}>
+<TextInput source="email"   /></Grid>
+<Grid item xs={4}>
+<PasswordInput source="password"   /></Grid>
+<Grid item xs={4}>
+<TextInput source="name"   /></Grid>
+<Grid item xs={4}>
+<NumberInput source="age"   /></Grid>
+<Grid item xs={4}>
+<TextInput source="gender"   /></Grid>
+<Grid item xs={4}>
+<NumberInput source="weight"   /></Grid>
+<Grid item xs={4}>
+<NumberInput source="height"   /></Grid>
+<Grid item xs={4}>
+<TextInput source="healthConditions"   /></Grid>
+<Grid item xs={4}>
+<TextInput source="goals"   /></Grid>
+<Grid item xs={4}>
+<TextInput source="dietaryPreferences"   /></Grid>
+<Grid item xs={4}>
+<TextInput source="billingAddress"   /></Grid>
+<Grid item xs={4}>
+<TextInput source="country"   /></Grid>
+<Grid item xs={4}>
+<TextInput source="phone"   /></Grid>
+                        </Grid>
                       </SimpleForm>
                     </Edit>
                   );
@@ -90,15 +117,36 @@ export const CustomersEdit = () => (
 export const CustomersCreate = () => (
                                   <Create>
                                     <SimpleForm>
-                                        <NumberInput source="customerId"   />
-<TextInput source="email"   />
-<PasswordInput source="password"   />
-<TextInput source="name"   />
-<TextInput source="billingAddress"   />
-<TextInput source="defaultShippingAddress"   />
-<TextInput source="country"   />
-<TextInput source="phone"   />
-<ReferenceInput source="cartId"  reference="ShoppingCart"   />
+                                      <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 5 }}>
+                                        <Grid item xs={4}>
+<NumberInput source="customerId"   /></Grid>
+<Grid item xs={4}>
+<TextInput source="email"   /></Grid>
+<Grid item xs={4}>
+<PasswordInput source="password"   /></Grid>
+<Grid item xs={4}>
+<TextInput source="name"   /></Grid>
+<Grid item xs={4}>
+<NumberInput source="age"   /></Grid>
+<Grid item xs={4}>
+<TextInput source="gender"   /></Grid>
+<Grid item xs={4}>
+<NumberInput source="weight"   /></Grid>
+<Grid item xs={4}>
+<NumberInput source="height"   /></Grid>
+<Grid item xs={4}>
+<TextInput source="healthConditions"   /></Grid>
+<Grid item xs={4}>
+<TextInput source="goals"   /></Grid>
+<Grid item xs={4}>
+<TextInput source="dietaryPreferences"   /></Grid>
+<Grid item xs={4}>
+<TextInput source="billingAddress"   /></Grid>
+<Grid item xs={4}>
+<TextInput source="country"   /></Grid>
+<Grid item xs={4}>
+<TextInput source="phone"   /></Grid>
+                                      </Grid>
                                     </SimpleForm>
                                   </Create>
                                 );
@@ -113,7 +161,12 @@ const ResourceFilters = [
 ,
 ,
 ,
-<ReferenceInput source="cartId" label="cartId" reference="ShoppingCart"   alwaysOn/>,
+,
+,
+,
+,
+,
+,
 
     ];
 
