@@ -34,77 +34,61 @@ const fieldConfig = {
     "datatype": "Integer"
   }
 ],
-Employees: [
+Customers: [
   {
-    "field": "employeeId",
+    "field": "customerId",
     "datatype": "Integer"
   },
   {
-    "field": "firstName",
+    "field": "email",
     "datatype": "String"
   },
   {
-    "field": "lastName",
+    "field": "password",
     "datatype": "String"
   },
   {
-    "field": "middleName",
+    "field": "name",
     "datatype": "String"
   },
   {
-    "field": "dateOfBirth",
-    "datatype": "DateTime"
+    "field": "age",
+    "datatype": "Integer"
   },
   {
     "field": "gender",
     "datatype": "String"
   },
   {
-    "field": "nationality",
-    "datatype": "String"
-  },
-  {
-    "field": "maritalStatus",
-    "datatype": "String"
-  },
-  {
-    "field": "contactInformation",
-    "datatype": "String"
-  },
-  {
-    "field": "address",
-    "datatype": "String"
-  },
-  {
-    "field": "departmentTeam",
-    "datatype": "String"
-  },
-  {
-    "field": "positionRole",
-    "datatype": "String"
-  },
-  {
-    "field": "managerSupervisor",
-    "datatype": "String"
-  },
-  {
-    "field": "employmentType",
-    "datatype": "String"
-  },
-  {
-    "field": "startDate",
-    "datatype": "DateTime"
-  },
-  {
-    "field": "endDate",
-    "datatype": "DateTime"
-  },
-  {
-    "field": "salaryInformation",
+    "field": "weight",
     "datatype": "Real"
   },
   {
-    "field": "profilePicture",
+    "field": "height",
+    "datatype": "Real"
+  },
+  {
+    "field": "healthConditions",
+    "datatype": "String"
+  },
+  {
+    "field": "goals",
+    "datatype": "String"
+  },
+  {
+    "field": "dietaryPreferences",
+    "datatype": "String"
+  },
+  {
+    "field": "billingAddress",
+    "datatype": "String"
+  },
+  {
+    "field": "country",
+    "datatype": "String"
+  },
+  {
+    "field": "phone",
     "datatype": "String"
   },
   {
@@ -112,41 +96,127 @@ Employees: [
     "datatype": "Integer"
   }
 ],
-Evaluations: [
+Workouts: [
   {
-    "field": "reviewId",
+    "field": "workoutId",
     "datatype": "Integer"
   },
   {
-    "field": "employeeId",
+    "field": "customerId",
     "datatype": "Integer"
   },
   {
-    "field": "period",
+    "field": "type",
     "datatype": "String"
   },
   {
-    "field": "goalsObjectives",
+    "field": "duration",
+    "datatype": "Real"
+  },
+  {
+    "field": "intensity",
     "datatype": "String"
   },
   {
-    "field": "achievements",
-    "datatype": "String"
+    "field": "caloriesBurned",
+    "datatype": "Real"
   },
   {
-    "field": "improvementAreas",
-    "datatype": "String"
+    "field": "date",
+    "datatype": "DateTime"
   },
   {
-    "field": "feedbackFromSupervisor",
-    "datatype": "String"
-  },
+    "field": "id",
+    "datatype": "Integer"
+  }
+],
+Nutrition: [
   {
-    "field": "overallRating",
+    "field": "mealId",
     "datatype": "Integer"
   },
   {
-    "field": "recommendations",
+    "field": "customerId",
+    "datatype": "Integer"
+  },
+  {
+    "field": "foodItem",
+    "datatype": "String"
+  },
+  {
+    "field": "quantity",
+    "datatype": "Real"
+  },
+  {
+    "field": "calories",
+    "datatype": "Real"
+  },
+  {
+    "field": "macronutrients",
+    "datatype": "String"
+  },
+  {
+    "field": "date",
+    "datatype": "DateTime"
+  },
+  {
+    "field": "id",
+    "datatype": "Integer"
+  }
+],
+HealthMetrics: [
+  {
+    "field": "metricId",
+    "datatype": "Integer"
+  },
+  {
+    "field": "customerId",
+    "datatype": "Integer"
+  },
+  {
+    "field": "type",
+    "datatype": "String"
+  },
+  {
+    "field": "value",
+    "datatype": "Real"
+  },
+  {
+    "field": "unit",
+    "datatype": "String"
+  },
+  {
+    "field": "date",
+    "datatype": "DateTime"
+  },
+  {
+    "field": "id",
+    "datatype": "Integer"
+  }
+],
+Notifications: [
+  {
+    "field": "notificationId",
+    "datatype": "Integer"
+  },
+  {
+    "field": "customerId",
+    "datatype": "Integer"
+  },
+  {
+    "field": "type",
+    "datatype": "String"
+  },
+  {
+    "field": "message",
+    "datatype": "String"
+  },
+  {
+    "field": "dateScheduled",
+    "datatype": "DateTime"
+  },
+  {
+    "field": "status",
     "datatype": "String"
   },
   {
@@ -154,80 +224,34 @@ Evaluations: [
     "datatype": "Integer"
   }
 ],
-Payroll: [
+SupportTickets: [
   {
-    "field": "payrollId",
+    "field": "ticketId",
     "datatype": "Integer"
   },
   {
-    "field": "employeeId",
+    "field": "userId",
     "datatype": "Integer"
   },
   {
-    "field": "period",
+    "field": "customerId",
+    "datatype": "Integer"
+  },
+  {
+    "field": "description",
     "datatype": "String"
   },
   {
-    "field": "grossSalary",
-    "datatype": "Real"
+    "field": "status",
+    "datatype": "String"
   },
   {
-    "field": "deductions",
-    "datatype": "Real"
-  },
-  {
-    "field": "netSalary",
-    "datatype": "Real"
-  },
-  {
-    "field": "payDate",
+    "field": "creationDate",
     "datatype": "DateTime"
   },
   {
-    "field": "overtimeHours",
-    "datatype": "Integer"
-  },
-  {
-    "field": "overtimePay",
-    "datatype": "Real"
-  },
-  {
-    "field": "id",
-    "datatype": "Integer"
-  }
-],
-LeaveRequests: [
-  {
-    "field": "requestId",
-    "datatype": "Integer"
-  },
-  {
-    "field": "employeeId",
-    "datatype": "Integer"
-  },
-  {
-    "field": "typeOfLeave",
-    "datatype": "String"
-  },
-  {
-    "field": "startDate",
+    "field": "resolutionDate",
     "datatype": "DateTime"
-  },
-  {
-    "field": "endDate",
-    "datatype": "DateTime"
-  },
-  {
-    "field": "reason",
-    "datatype": "String"
-  },
-  {
-    "field": "approvalStatus",
-    "datatype": "String"
-  },
-  {
-    "field": "approverUserId",
-    "datatype": "Integer"
   },
   {
     "field": "id",
