@@ -3,9 +3,9 @@
  import { Card, CardContent, CardHeader } from "@mui/material";
     export const Dashboard = () => (
       <Card>
-      <CardHeader title="EcoPulse" />
+      <CardHeader title="EmpowerHR" />
       <CardContent> 
-      It is an app empowering your green journey with real-time sustainability tracking, eco-challenges, and personalized tips to reduce your carbon footprint.
+      HR application used by a company to streamline the management of employee information, recruitment, performance evaluations, leave requests, and payroll.
       <p>Built with{' '}
       <a
         href="https://www.appgpt.tech"
