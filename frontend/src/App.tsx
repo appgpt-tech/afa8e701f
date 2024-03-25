@@ -11,23 +11,15 @@ import { i18nProvider } from "./i18nProvider";
 import LoginPage, { Login } from "./Login";
 import data from "./data";
 import { UsersList, UsersCreate, UsersEdit} from "./resources/Users";
-import { EmissionSourcesList, EmissionSourcesCreate, EmissionSourcesEdit} from "./resources/EmissionSources";
-import { ResourceUsageList, ResourceUsageCreate, ResourceUsageEdit} from "./resources/ResourceUsage";
-import { GoalsList, GoalsCreate, GoalsEdit} from "./resources/Goals";
-import { WasteManagementList, WasteManagementCreate, WasteManagementEdit} from "./resources/WasteManagement";
-import { SuppliersList, SuppliersCreate, SuppliersEdit} from "./resources/Suppliers";
-import { ProductsList, ProductsCreate, ProductsEdit} from "./resources/Products";
 import { EmployeesList, EmployeesCreate, EmployeesEdit} from "./resources/Employees";
-import { ReportsList, ReportsCreate, ReportsEdit} from "./resources/Reports";
+import { EvaluationsList, EvaluationsCreate, EvaluationsEdit} from "./resources/Evaluations";
+import { PayrollList, PayrollCreate, PayrollEdit} from "./resources/Payroll";
+import { LeaveRequestsList, LeaveRequestsCreate, LeaveRequestsEdit} from "./resources/LeaveRequests";
 import UsersIcon from "@mui/icons-material/Person";
-import EmissionSourcesIcon from "@mui/icons-material/Collections";
-import ResourceUsageIcon from "@mui/icons-material/Score";
-import GoalsIcon from "@mui/icons-material/Call";
-import WasteManagementIcon from "@mui/icons-material/Delete";
-import SuppliersIcon from "@mui/icons-material/Store";
-import ProductsIcon from "@mui/icons-material/ProductionQuantityLimits";
-import EmployeesIcon from "@mui/icons-material/Person";
-import ReportsIcon from "@mui/icons-material/Report"; 
+import EmployeesIcon from "@mui/icons-material/People";
+import EvaluationsIcon from "@mui/icons-material/Assignment";
+import PayrollIcon from "@mui/icons-material/Payment";
+import LeaveRequestsIcon from "@mui/icons-material/Event"; 
 // SUPERTOKENS
 import React from "react";
 import SuperTokens, {
@@ -95,54 +87,30 @@ create={UsersCreate}
 edit={UsersEdit}
 recordRepresentation="name"
 icon={UsersIcon}/>
-<Resource name="EmissionSources" options={{label:"Emission Sources"}} 
-list={EmissionSourcesList}
-create={EmissionSourcesCreate}
-edit={EmissionSourcesEdit}
-recordRepresentation="sourceType"
-icon={EmissionSourcesIcon}/>
-<Resource name="ResourceUsage" options={{label:"Resource Usage"}} 
-list={ResourceUsageList}
-create={ResourceUsageCreate}
-edit={ResourceUsageEdit}
-recordRepresentation="resourceType"
-icon={ResourceUsageIcon}/>
-<Resource name="Goals" options={{label:"Goals"}} 
-list={GoalsList}
-create={GoalsCreate}
-edit={GoalsEdit}
-recordRepresentation="goalDescription"
-icon={GoalsIcon}/>
-<Resource name="WasteManagement" options={{label:"Waste Management"}} 
-list={WasteManagementList}
-create={WasteManagementCreate}
-edit={WasteManagementEdit}
-recordRepresentation="wasteType"
-icon={WasteManagementIcon}/>
-<Resource name="Suppliers" options={{label:"Suppliers"}} 
-list={SuppliersList}
-create={SuppliersCreate}
-edit={SuppliersEdit}
-recordRepresentation="supplierName"
-icon={SuppliersIcon}/>
-<Resource name="Products" options={{label:"Products"}} 
-list={ProductsList}
-create={ProductsCreate}
-edit={ProductsEdit}
-recordRepresentation="name"
-icon={ProductsIcon}/>
 <Resource name="Employees" options={{label:"Employees"}} 
 list={EmployeesList}
 create={EmployeesCreate}
 edit={EmployeesEdit}
-recordRepresentation="id"
+recordRepresentation="firstName"
 icon={EmployeesIcon}/>
-<Resource name="Reports" options={{label:"Reports"}} 
-list={ReportsList}
-create={ReportsCreate}
-edit={ReportsEdit}
-recordRepresentation="description"
-icon={ReportsIcon}/>
+<Resource name="Evaluations" options={{label:"Evaluations"}} 
+list={EvaluationsList}
+create={EvaluationsCreate}
+edit={EvaluationsEdit}
+recordRepresentation="reviewId"
+icon={EvaluationsIcon}/>
+<Resource name="Payroll" options={{label:"Payroll"}} 
+list={PayrollList}
+create={PayrollCreate}
+edit={PayrollEdit}
+recordRepresentation="payrollId"
+icon={PayrollIcon}/>
+<Resource name="LeaveRequests" options={{label:"Leave Requests"}} 
+list={LeaveRequestsList}
+create={LeaveRequestsCreate}
+edit={LeaveRequestsEdit}
+recordRepresentation="requestId"
+icon={LeaveRequestsIcon}/>
     <CustomRoutes noLayout>
       {/*This renders the login UI on the /auth route*/}
       {getSuperTokensRoutesForReactRouterDom(reactRouterDom)}
