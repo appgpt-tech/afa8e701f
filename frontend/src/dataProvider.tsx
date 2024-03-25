@@ -14,135 +14,19 @@ const fieldConfig = {
     "datatype": "Integer"
   },
   {
+    "field": "name",
+    "datatype": "String"
+  },
+  {
     "field": "email",
     "datatype": "String"
   },
   {
-    "field": "name",
+    "field": "password",
     "datatype": "String"
   },
   {
-    "field": "id",
-    "datatype": "Integer"
-  }
-],
-EmissionSources: [
-  {
-    "field": "sourceType",
-    "datatype": "String"
-  },
-  {
-    "field": "quantityUsed",
-    "datatype": "Real"
-  },
-  {
-    "field": "emissionFactors",
-    "datatype": "Real"
-  },
-  {
-    "field": "totalEmissions",
-    "datatype": "Real"
-  },
-  {
-    "field": "id",
-    "datatype": "Integer"
-  }
-],
-ResourceUsage: [
-  {
-    "field": "resourceType",
-    "datatype": "String"
-  },
-  {
-    "field": "quantityConsumed",
-    "datatype": "Real"
-  },
-  {
-    "field": "measurementUnit",
-    "datatype": "String"
-  },
-  {
-    "field": "periodOfConsumption",
-    "datatype": "DateTime"
-  },
-  {
-    "field": "id",
-    "datatype": "Integer"
-  }
-],
-Goals: [
-  {
-    "field": "goalDescription",
-    "datatype": "String"
-  },
-  {
-    "field": "baselineMetric",
-    "datatype": "Real"
-  },
-  {
-    "field": "targetMetric",
-    "datatype": "Real"
-  },
-  {
-    "field": "deadline",
-    "datatype": "DateTime"
-  },
-  {
-    "field": "currentProgress",
-    "datatype": "Real"
-  },
-  {
-    "field": "id",
-    "datatype": "Integer"
-  }
-],
-WasteManagement: [
-  {
-    "field": "wasteType",
-    "datatype": "String"
-  },
-  {
-    "field": "quantityGenerated",
-    "datatype": "Real"
-  },
-  {
-    "field": "recyclingMethod",
-    "datatype": "String"
-  },
-  {
-    "field": "reductionInitiatives",
-    "datatype": "String"
-  },
-  {
-    "field": "id",
-    "datatype": "Integer"
-  }
-],
-Suppliers: [
-  {
-    "field": "supplierName",
-    "datatype": "String"
-  },
-  {
-    "field": "productService",
-    "datatype": "String"
-  },
-  {
-    "field": "sustainabilityRating",
-    "datatype": "Real"
-  },
-  {
-    "field": "certifications",
-    "datatype": "String"
-  },
-  {
-    "field": "id",
-    "datatype": "Integer"
-  }
-],
-Products: [
-  {
-    "field": "name",
+    "field": "role",
     "datatype": "String"
   },
   {
@@ -152,18 +36,198 @@ Products: [
 ],
 Employees: [
   {
-    "field": "id",
+    "field": "employeeId",
     "datatype": "Integer"
   },
   {
-    "field": "mail",
+    "field": "firstName",
     "datatype": "String"
+  },
+  {
+    "field": "lastName",
+    "datatype": "String"
+  },
+  {
+    "field": "middleName",
+    "datatype": "String"
+  },
+  {
+    "field": "dateOfBirth",
+    "datatype": "DateTime"
+  },
+  {
+    "field": "gender",
+    "datatype": "String"
+  },
+  {
+    "field": "nationality",
+    "datatype": "String"
+  },
+  {
+    "field": "maritalStatus",
+    "datatype": "String"
+  },
+  {
+    "field": "contactInformation",
+    "datatype": "String"
+  },
+  {
+    "field": "address",
+    "datatype": "String"
+  },
+  {
+    "field": "departmentTeam",
+    "datatype": "String"
+  },
+  {
+    "field": "positionRole",
+    "datatype": "String"
+  },
+  {
+    "field": "managerSupervisor",
+    "datatype": "String"
+  },
+  {
+    "field": "employmentType",
+    "datatype": "String"
+  },
+  {
+    "field": "startDate",
+    "datatype": "DateTime"
+  },
+  {
+    "field": "endDate",
+    "datatype": "DateTime"
+  },
+  {
+    "field": "salaryInformation",
+    "datatype": "Real"
+  },
+  {
+    "field": "profilePicture",
+    "datatype": "String"
+  },
+  {
+    "field": "id",
+    "datatype": "Integer"
   }
 ],
-Reports: [
+Evaluations: [
   {
-    "field": "description",
+    "field": "reviewId",
+    "datatype": "Integer"
+  },
+  {
+    "field": "employeeId",
+    "datatype": "Integer"
+  },
+  {
+    "field": "period",
     "datatype": "String"
+  },
+  {
+    "field": "goalsObjectives",
+    "datatype": "String"
+  },
+  {
+    "field": "achievements",
+    "datatype": "String"
+  },
+  {
+    "field": "improvementAreas",
+    "datatype": "String"
+  },
+  {
+    "field": "feedbackFromSupervisor",
+    "datatype": "String"
+  },
+  {
+    "field": "overallRating",
+    "datatype": "Integer"
+  },
+  {
+    "field": "recommendations",
+    "datatype": "String"
+  },
+  {
+    "field": "id",
+    "datatype": "Integer"
+  }
+],
+Payroll: [
+  {
+    "field": "payrollId",
+    "datatype": "Integer"
+  },
+  {
+    "field": "employeeId",
+    "datatype": "Integer"
+  },
+  {
+    "field": "period",
+    "datatype": "String"
+  },
+  {
+    "field": "grossSalary",
+    "datatype": "Real"
+  },
+  {
+    "field": "deductions",
+    "datatype": "Real"
+  },
+  {
+    "field": "netSalary",
+    "datatype": "Real"
+  },
+  {
+    "field": "payDate",
+    "datatype": "DateTime"
+  },
+  {
+    "field": "overtimeHours",
+    "datatype": "Integer"
+  },
+  {
+    "field": "overtimePay",
+    "datatype": "Real"
+  },
+  {
+    "field": "id",
+    "datatype": "Integer"
+  }
+],
+LeaveRequests: [
+  {
+    "field": "requestId",
+    "datatype": "Integer"
+  },
+  {
+    "field": "employeeId",
+    "datatype": "Integer"
+  },
+  {
+    "field": "typeOfLeave",
+    "datatype": "String"
+  },
+  {
+    "field": "startDate",
+    "datatype": "DateTime"
+  },
+  {
+    "field": "endDate",
+    "datatype": "DateTime"
+  },
+  {
+    "field": "reason",
+    "datatype": "String"
+  },
+  {
+    "field": "approvalStatus",
+    "datatype": "String"
+  },
+  {
+    "field": "approverUserId",
+    "datatype": "Integer"
   },
   {
     "field": "id",
