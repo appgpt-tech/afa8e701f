@@ -8,8 +8,59 @@ export class EmployeesEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column("text",{nullable: true})
-mail: string;
+  @Column("integer",{nullable: true})
+employeeId: number;
+
+@Column("text",{nullable: true})
+firstName: string;
+
+@Column("text",{nullable: true})
+lastName: string;
+
+@Column("text",{nullable: true})
+middleName: string;
+
+@Column("date",{nullable: true})
+dateOfBirth: Date;
+
+@Column("text",{nullable: true})
+gender: string;
+
+@Column("text",{nullable: true})
+nationality: string;
+
+@Column("text",{nullable: true})
+maritalStatus: string;
+
+@Column("text",{nullable: true})
+contactInformation: string;
+
+@Column("text",{nullable: true})
+address: string;
+
+@Column("text",{nullable: true})
+departmentTeam: string;
+
+@Column("text",{nullable: true})
+positionRole: string;
+
+@Column("text",{nullable: true})
+managerSupervisor: string;
+
+@Column("text",{nullable: true})
+employmentType: string;
+
+@Column("date",{nullable: true})
+startDate: Date;
+
+@Column("date",{nullable: true})
+endDate: Date;
+
+@Column("real",{nullable: true})
+salaryInformation: number;
+
+@Column("text",{nullable: true})
+profilePicture: string;
 
 
 }
