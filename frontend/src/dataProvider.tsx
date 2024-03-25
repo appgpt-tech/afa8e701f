@@ -10,81 +10,59 @@ import qs from 'qs';
 const fieldConfig = {
     Users: [
   {
-    "field": "userName",
-    "datatype": "String"
+    "field": "userId",
+    "datatype": "Integer"
   },
   {
     "field": "email",
     "datatype": "String"
   },
   {
-    "field": "id",
-    "datatype": "Integer"
-  }
-],
-Cards: [
-  {
-    "field": "cardName",
+    "field": "name",
     "datatype": "String"
-  },
-  {
-    "field": "serial",
-    "datatype": "String"
-  },
-  {
-    "field": "type",
-    "datatype": "String"
-  },
-  {
-    "field": "rarity",
-    "datatype": "String"
-  },
-  {
-    "field": "condition",
-    "datatype": "String"
-  },
-  {
-    "field": "imageUrl",
-    "datatype": "String"
-  },
-  {
-    "field": "set",
-    "datatype": "Integer"
   },
   {
     "field": "id",
     "datatype": "Integer"
   }
 ],
-Sets: [
+EmissionSources: [
   {
-    "field": "setName",
+    "field": "sourceType",
     "datatype": "String"
   },
   {
-    "field": "releaseDate",
-    "datatype": "DateTime"
+    "field": "quantityUsed",
+    "datatype": "Real"
   },
   {
-    "field": "totalCards",
-    "datatype": "Integer"
+    "field": "emissionFactors",
+    "datatype": "Real"
+  },
+  {
+    "field": "totalEmissions",
+    "datatype": "Real"
   },
   {
     "field": "id",
     "datatype": "Integer"
   }
 ],
-Inventory: [
+ResourceUsage: [
   {
-    "field": "user",
-    "datatype": "Integer"
+    "field": "resourceType",
+    "datatype": "String"
   },
   {
-    "field": "card",
-    "datatype": "Integer"
+    "field": "quantityConsumed",
+    "datatype": "Real"
   },
   {
-    "field": "dateAdded",
+    "field": "measurementUnit",
+    "datatype": "String"
+  },
+  {
+    "field": "periodOfConsumption",
     "datatype": "DateTime"
   },
   {
@@ -92,18 +70,100 @@ Inventory: [
     "datatype": "Integer"
   }
 ],
-Wishlist: [
+Goals: [
   {
-    "field": "user",
-    "datatype": "Integer"
+    "field": "goalDescription",
+    "datatype": "String"
   },
   {
-    "field": "card",
-    "datatype": "Integer"
+    "field": "baselineMetric",
+    "datatype": "Real"
   },
   {
-    "field": "dateInserted",
+    "field": "targetMetric",
+    "datatype": "Real"
+  },
+  {
+    "field": "deadline",
     "datatype": "DateTime"
+  },
+  {
+    "field": "currentProgress",
+    "datatype": "Real"
+  },
+  {
+    "field": "id",
+    "datatype": "Integer"
+  }
+],
+WasteManagement: [
+  {
+    "field": "wasteType",
+    "datatype": "String"
+  },
+  {
+    "field": "quantityGenerated",
+    "datatype": "Real"
+  },
+  {
+    "field": "recyclingMethod",
+    "datatype": "String"
+  },
+  {
+    "field": "reductionInitiatives",
+    "datatype": "String"
+  },
+  {
+    "field": "id",
+    "datatype": "Integer"
+  }
+],
+Suppliers: [
+  {
+    "field": "supplierName",
+    "datatype": "String"
+  },
+  {
+    "field": "productService",
+    "datatype": "String"
+  },
+  {
+    "field": "sustainabilityRating",
+    "datatype": "Real"
+  },
+  {
+    "field": "certifications",
+    "datatype": "String"
+  },
+  {
+    "field": "id",
+    "datatype": "Integer"
+  }
+],
+Products: [
+  {
+    "field": "name",
+    "datatype": "String"
+  },
+  {
+    "field": "id",
+    "datatype": "Integer"
+  }
+],
+Employees: [
+  {
+    "field": "id",
+    "datatype": "Integer"
+  },
+  {
+    "field": "mail",
+    "datatype": "String"
+  }
+],
+Reports: [
+  {
+    "field": "description",
+    "datatype": "String"
   },
   {
     "field": "id",
