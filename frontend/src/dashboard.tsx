@@ -3,9 +3,9 @@
  import { Card, CardContent, CardHeader } from "@mui/material";
     export const Dashboard = () => (
       <Card>
-      <CardHeader title="PokeVault" />
+      <CardHeader title="EcoPulse" />
       <CardContent> 
-      A web app to keep a Pokémon collectible cards inventory which involves blending themes of collection, organization, and the vibrant world of Pokémon.
+      It is an app empowering your green journey with real-time sustainability tracking, eco-challenges, and personalized tips to reduce your carbon footprint.
       <p>Built with{' '}
       <a
         href="https://www.appgpt.tech"
