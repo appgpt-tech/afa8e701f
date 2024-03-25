@@ -54,13 +54,30 @@ const ListActions = () => (
 );
 const EmployeesTitle = () => {
   const record = useRecordContext();
-  return <span>Employees {record ? `"${ record.id }"` : ""}</span>;
+  return <span>Employees {record ? `"${ record.firstName }"` : ""}</span>;
 };
 
 export const EmployeesList = () => (
       <List actions={<ListActions  />} filters={ResourceFilters} >
         <DatagridConfigurable>
-          <EmailField source="mail" /><EditButton />
+          <NumberField source="employeeId" />
+<TextField source="firstName" />
+<TextField source="lastName" />
+<TextField source="middleName" />
+<DateField source="dateOfBirth" />
+<TextField source="gender" />
+<TextField source="nationality" />
+<TextField source="maritalStatus" />
+<TextField source="contactInformation" />
+<TextField source="address" />
+<TextField source="departmentTeam" />
+<TextField source="positionRole" />
+<TextField source="managerSupervisor" />
+<TextField source="employmentType" />
+<DateField source="startDate" />
+<DateField source="endDate" />
+<NumberField source="salaryInformation" />
+<ImageField source="profilePicture" /><EditButton />
 
         </DatagridConfigurable>
       </List>
@@ -71,7 +88,41 @@ export const EmployeesEdit = () => (
                       <SimpleForm>
                         <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 5 }}>
                           <Grid item xs={4}>
-<TextInput source="mail"   /></Grid>
+<NumberInput source="employeeId"   /></Grid>
+<Grid item xs={4}>
+<TextInput source="firstName"   /></Grid>
+<Grid item xs={4}>
+<TextInput source="lastName"   /></Grid>
+<Grid item xs={4}>
+<TextInput source="middleName"   /></Grid>
+<Grid item xs={4}>
+<DateInput source="dateOfBirth"   /></Grid>
+<Grid item xs={4}>
+<TextInput source="gender"   /></Grid>
+<Grid item xs={4}>
+<TextInput source="nationality"   /></Grid>
+<Grid item xs={4}>
+<TextInput source="maritalStatus"   /></Grid>
+<Grid item xs={4}>
+<TextInput source="contactInformation"   /></Grid>
+<Grid item xs={4}>
+<TextInput source="address"   /></Grid>
+<Grid item xs={4}>
+<TextInput source="departmentTeam"   /></Grid>
+<Grid item xs={4}>
+<TextInput source="positionRole"   /></Grid>
+<Grid item xs={4}>
+<TextInput source="managerSupervisor"   /></Grid>
+<Grid item xs={4}>
+<TextInput source="employmentType"   /></Grid>
+<Grid item xs={4}>
+<DateInput source="startDate"   /></Grid>
+<Grid item xs={4}>
+<DateInput source="endDate"   /></Grid>
+<Grid item xs={4}>
+<NumberInput source="salaryInformation"   /></Grid>
+<Grid item xs={4}>
+<ImageInput source="profilePicture"   /></Grid>
                         </Grid>
                       </SimpleForm>
                     </Edit>
@@ -82,7 +133,41 @@ export const EmployeesCreate = () => (
                                     <SimpleForm>
                                       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 5 }}>
                                         <Grid item xs={4}>
-<TextInput source="mail"   /></Grid>
+<NumberInput source="employeeId"   /></Grid>
+<Grid item xs={4}>
+<TextInput source="firstName"   /></Grid>
+<Grid item xs={4}>
+<TextInput source="lastName"   /></Grid>
+<Grid item xs={4}>
+<TextInput source="middleName"   /></Grid>
+<Grid item xs={4}>
+<DateInput source="dateOfBirth"   /></Grid>
+<Grid item xs={4}>
+<TextInput source="gender"   /></Grid>
+<Grid item xs={4}>
+<TextInput source="nationality"   /></Grid>
+<Grid item xs={4}>
+<TextInput source="maritalStatus"   /></Grid>
+<Grid item xs={4}>
+<TextInput source="contactInformation"   /></Grid>
+<Grid item xs={4}>
+<TextInput source="address"   /></Grid>
+<Grid item xs={4}>
+<TextInput source="departmentTeam"   /></Grid>
+<Grid item xs={4}>
+<TextInput source="positionRole"   /></Grid>
+<Grid item xs={4}>
+<TextInput source="managerSupervisor"   /></Grid>
+<Grid item xs={4}>
+<TextInput source="employmentType"   /></Grid>
+<Grid item xs={4}>
+<DateInput source="startDate"   /></Grid>
+<Grid item xs={4}>
+<DateInput source="endDate"   /></Grid>
+<Grid item xs={4}>
+<NumberInput source="salaryInformation"   /></Grid>
+<Grid item xs={4}>
+<ImageInput source="profilePicture"   /></Grid>
                                       </Grid>
                                     </SimpleForm>
                                   </Create>
@@ -90,6 +175,23 @@ export const EmployeesCreate = () => (
 
 const ResourceFilters = [
       <TextInput source="q" label="Search" alwaysOn />,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
 ,
 
     ];
