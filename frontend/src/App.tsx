@@ -11,15 +11,23 @@ import { i18nProvider } from "./i18nProvider";
 import LoginPage, { Login } from "./Login";
 import data from "./data";
 import { UsersList, UsersCreate, UsersEdit} from "./resources/Users";
-import { CardsList, CardsCreate, CardsEdit} from "./resources/Cards";
-import { SetsList, SetsCreate, SetsEdit} from "./resources/Sets";
-import { InventoryList, InventoryCreate, InventoryEdit} from "./resources/Inventory";
-import { WishlistList, WishlistCreate, WishlistEdit} from "./resources/Wishlist";
+import { EmissionSourcesList, EmissionSourcesCreate, EmissionSourcesEdit} from "./resources/EmissionSources";
+import { ResourceUsageList, ResourceUsageCreate, ResourceUsageEdit} from "./resources/ResourceUsage";
+import { GoalsList, GoalsCreate, GoalsEdit} from "./resources/Goals";
+import { WasteManagementList, WasteManagementCreate, WasteManagementEdit} from "./resources/WasteManagement";
+import { SuppliersList, SuppliersCreate, SuppliersEdit} from "./resources/Suppliers";
+import { ProductsList, ProductsCreate, ProductsEdit} from "./resources/Products";
+import { EmployeesList, EmployeesCreate, EmployeesEdit} from "./resources/Employees";
+import { ReportsList, ReportsCreate, ReportsEdit} from "./resources/Reports";
 import UsersIcon from "@mui/icons-material/Person";
-import CardsIcon from "@mui/icons-material/Collections";
-import SetsIcon from "@mui/icons-material/CollectionsBookmark";
-import InventoryIcon from "@mui/icons-material/Inventory";
-import WishlistIcon from "@mui/icons-material/Favorite"; 
+import EmissionSourcesIcon from "@mui/icons-material/Collections";
+import ResourceUsageIcon from "@mui/icons-material/Score";
+import GoalsIcon from "@mui/icons-material/Call";
+import WasteManagementIcon from "@mui/icons-material/Delete";
+import SuppliersIcon from "@mui/icons-material/Store";
+import ProductsIcon from "@mui/icons-material/ProductionQuantityLimits";
+import EmployeesIcon from "@mui/icons-material/Person";
+import ReportsIcon from "@mui/icons-material/Report"; 
 // SUPERTOKENS
 import React from "react";
 import SuperTokens, {
@@ -85,32 +93,56 @@ const App = () => (
 list={UsersList}
 create={UsersCreate}
 edit={UsersEdit}
-recordRepresentation="userName"
+recordRepresentation="name"
 icon={UsersIcon}/>
-<Resource name="Cards" options={{label:"Cards"}} 
-list={CardsList}
-create={CardsCreate}
-edit={CardsEdit}
-recordRepresentation="cardName"
-icon={CardsIcon}/>
-<Resource name="Sets" options={{label:"Sets"}} 
-list={SetsList}
-create={SetsCreate}
-edit={SetsEdit}
-recordRepresentation="setName"
-icon={SetsIcon}/>
-<Resource name="Inventory" options={{label:"Inventory"}} 
-list={InventoryList}
-create={InventoryCreate}
-edit={InventoryEdit}
-recordRepresentation="user"
-icon={InventoryIcon}/>
-<Resource name="Wishlist" options={{label:"Wishlist"}} 
-list={WishlistList}
-create={WishlistCreate}
-edit={WishlistEdit}
-recordRepresentation="user"
-icon={WishlistIcon}/>
+<Resource name="EmissionSources" options={{label:"Emission Sources"}} 
+list={EmissionSourcesList}
+create={EmissionSourcesCreate}
+edit={EmissionSourcesEdit}
+recordRepresentation="sourceType"
+icon={EmissionSourcesIcon}/>
+<Resource name="ResourceUsage" options={{label:"Resource Usage"}} 
+list={ResourceUsageList}
+create={ResourceUsageCreate}
+edit={ResourceUsageEdit}
+recordRepresentation="resourceType"
+icon={ResourceUsageIcon}/>
+<Resource name="Goals" options={{label:"Goals"}} 
+list={GoalsList}
+create={GoalsCreate}
+edit={GoalsEdit}
+recordRepresentation="goalDescription"
+icon={GoalsIcon}/>
+<Resource name="WasteManagement" options={{label:"Waste Management"}} 
+list={WasteManagementList}
+create={WasteManagementCreate}
+edit={WasteManagementEdit}
+recordRepresentation="wasteType"
+icon={WasteManagementIcon}/>
+<Resource name="Suppliers" options={{label:"Suppliers"}} 
+list={SuppliersList}
+create={SuppliersCreate}
+edit={SuppliersEdit}
+recordRepresentation="supplierName"
+icon={SuppliersIcon}/>
+<Resource name="Products" options={{label:"Products"}} 
+list={ProductsList}
+create={ProductsCreate}
+edit={ProductsEdit}
+recordRepresentation="name"
+icon={ProductsIcon}/>
+<Resource name="Employees" options={{label:"Employees"}} 
+list={EmployeesList}
+create={EmployeesCreate}
+edit={EmployeesEdit}
+recordRepresentation="id"
+icon={EmployeesIcon}/>
+<Resource name="Reports" options={{label:"Reports"}} 
+list={ReportsList}
+create={ReportsCreate}
+edit={ReportsEdit}
+recordRepresentation="description"
+icon={ReportsIcon}/>
     <CustomRoutes noLayout>
       {/*This renders the login UI on the /auth route*/}
       {getSuperTokensRoutesForReactRouterDom(reactRouterDom)}
