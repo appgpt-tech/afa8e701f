@@ -8,212 +8,26 @@ import postgrestRestProvider from "@promitheus/ra-data-postgrest";
 import qs from 'qs';
 
 const fieldConfig = {
-    Users: [
+    books: [
   {
-    "field": "userId",
+    "field": "title",
+    "datatype": "String"
+  },
+  {
+    "field": "author",
     "datatype": "Integer"
   },
   {
-    "field": "name",
+    "field": "ISBN",
     "datatype": "String"
   },
   {
-    "field": "email",
-    "datatype": "String"
-  },
-  {
-    "field": "password",
-    "datatype": "String"
-  },
-  {
-    "field": "role",
-    "datatype": "String"
-  },
-  {
-    "field": "id",
-    "datatype": "Integer"
-  }
-],
-Customers: [
-  {
-    "field": "customerId",
-    "datatype": "Integer"
-  },
-  {
-    "field": "email",
-    "datatype": "String"
-  },
-  {
-    "field": "password",
-    "datatype": "String"
-  },
-  {
-    "field": "name",
-    "datatype": "String"
-  },
-  {
-    "field": "age",
-    "datatype": "Integer"
-  },
-  {
-    "field": "gender",
-    "datatype": "String"
-  },
-  {
-    "field": "weight",
-    "datatype": "Real"
-  },
-  {
-    "field": "height",
-    "datatype": "Real"
-  },
-  {
-    "field": "healthConditions",
-    "datatype": "String"
-  },
-  {
-    "field": "goals",
-    "datatype": "String"
-  },
-  {
-    "field": "dietaryPreferences",
-    "datatype": "String"
-  },
-  {
-    "field": "billingAddress",
-    "datatype": "String"
-  },
-  {
-    "field": "country",
-    "datatype": "String"
-  },
-  {
-    "field": "phone",
-    "datatype": "String"
-  },
-  {
-    "field": "id",
-    "datatype": "Integer"
-  }
-],
-Workouts: [
-  {
-    "field": "workoutId",
-    "datatype": "Integer"
-  },
-  {
-    "field": "customerId",
-    "datatype": "Integer"
-  },
-  {
-    "field": "type",
-    "datatype": "String"
-  },
-  {
-    "field": "duration",
-    "datatype": "Real"
-  },
-  {
-    "field": "intensity",
-    "datatype": "String"
-  },
-  {
-    "field": "caloriesBurned",
-    "datatype": "Real"
-  },
-  {
-    "field": "date",
+    "field": "publicationDate",
     "datatype": "DateTime"
   },
   {
-    "field": "id",
-    "datatype": "Integer"
-  }
-],
-Nutrition: [
-  {
-    "field": "mealId",
-    "datatype": "Integer"
-  },
-  {
-    "field": "customerId",
-    "datatype": "Integer"
-  },
-  {
-    "field": "foodItem",
+    "field": "genre",
     "datatype": "String"
-  },
-  {
-    "field": "quantity",
-    "datatype": "Real"
-  },
-  {
-    "field": "calories",
-    "datatype": "Real"
-  },
-  {
-    "field": "macronutrients",
-    "datatype": "String"
-  },
-  {
-    "field": "date",
-    "datatype": "DateTime"
-  },
-  {
-    "field": "id",
-    "datatype": "Integer"
-  }
-],
-HealthMetrics: [
-  {
-    "field": "metricId",
-    "datatype": "Integer"
-  },
-  {
-    "field": "customerId",
-    "datatype": "Integer"
-  },
-  {
-    "field": "type",
-    "datatype": "String"
-  },
-  {
-    "field": "value",
-    "datatype": "Real"
-  },
-  {
-    "field": "unit",
-    "datatype": "String"
-  },
-  {
-    "field": "date",
-    "datatype": "DateTime"
-  },
-  {
-    "field": "id",
-    "datatype": "Integer"
-  }
-],
-Notifications: [
-  {
-    "field": "notificationId",
-    "datatype": "Integer"
-  },
-  {
-    "field": "customerId",
-    "datatype": "Integer"
-  },
-  {
-    "field": "type",
-    "datatype": "String"
-  },
-  {
-    "field": "message",
-    "datatype": "String"
-  },
-  {
-    "field": "dateScheduled",
-    "datatype": "DateTime"
   },
   {
     "field": "status",
@@ -224,33 +38,81 @@ Notifications: [
     "datatype": "Integer"
   }
 ],
-SupportTickets: [
+authors: [
   {
-    "field": "ticketId",
-    "datatype": "Integer"
-  },
-  {
-    "field": "userId",
-    "datatype": "Integer"
-  },
-  {
-    "field": "customerId",
-    "datatype": "Integer"
-  },
-  {
-    "field": "description",
+    "field": "name",
     "datatype": "String"
   },
   {
-    "field": "status",
-    "datatype": "String"
-  },
-  {
-    "field": "creationDate",
+    "field": "dateOfBirth",
     "datatype": "DateTime"
   },
   {
-    "field": "resolutionDate",
+    "field": "nationality",
+    "datatype": "String"
+  },
+  {
+    "field": "listOfBooks",
+    "datatype": "Integer"
+  },
+  {
+    "field": "id",
+    "datatype": "Integer"
+  }
+],
+members: [
+  {
+    "field": "memberID",
+    "datatype": "String"
+  },
+  {
+    "field": "name",
+    "datatype": "String"
+  },
+  {
+    "field": "emailAddress",
+    "datatype": "String"
+  },
+  {
+    "field": "phoneNumber",
+    "datatype": "String"
+  },
+  {
+    "field": "address",
+    "datatype": "String"
+  },
+  {
+    "field": "membershipStartDate",
+    "datatype": "DateTime"
+  },
+  {
+    "field": "id",
+    "datatype": "Integer"
+  }
+],
+loans: [
+  {
+    "field": "loanID",
+    "datatype": "String"
+  },
+  {
+    "field": "bookID",
+    "datatype": "Integer"
+  },
+  {
+    "field": "memberID",
+    "datatype": "Integer"
+  },
+  {
+    "field": "loanDate",
+    "datatype": "DateTime"
+  },
+  {
+    "field": "dueDate",
+    "datatype": "DateTime"
+  },
+  {
+    "field": "returnDate",
     "datatype": "DateTime"
   },
   {
