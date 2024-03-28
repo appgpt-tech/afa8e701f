@@ -10,20 +10,14 @@ import { authProvider, apInitialize } from "./authProvider";
 import { i18nProvider } from "./i18nProvider";
 import LoginPage, { Login } from "./Login";
 import data from "./data";
-import { UsersList, UsersCreate, UsersEdit} from "./resources/Users";
-import { CustomersList, CustomersCreate, CustomersEdit} from "./resources/Customers";
-import { WorkoutsList, WorkoutsCreate, WorkoutsEdit} from "./resources/Workouts";
-import { NutritionList, NutritionCreate, NutritionEdit} from "./resources/Nutrition";
-import { HealthMetricsList, HealthMetricsCreate, HealthMetricsEdit} from "./resources/HealthMetrics";
-import { NotificationsList, NotificationsCreate, NotificationsEdit} from "./resources/Notifications";
-import { SupportTicketsList, SupportTicketsCreate, SupportTicketsEdit} from "./resources/SupportTickets";
-import UsersIcon from "@mui/icons-material/Person";
-import CustomersIcon from "@mui/icons-material/People";
-import WorkoutsIcon from "@mui/icons-material/FitnessCenter";
-import NutritionIcon from "@mui/icons-material/Fastfood";
-import HealthMetricsIcon from "@mui/icons-material/BarChart";
-import NotificationsIcon from "@mui/icons-material/Notifications";
-import SupportTicketsIcon from "@mui/icons-material/LiveHelp"; 
+import { booksList, booksCreate, booksEdit} from "./resources/books";
+import { authorsList, authorsCreate, authorsEdit} from "./resources/authors";
+import { membersList, membersCreate, membersEdit} from "./resources/members";
+import { loansList, loansCreate, loansEdit} from "./resources/loans";
+import booksIcon from "@mui/icons-material/Book";
+import authorsIcon from "@mui/icons-material/Person";
+import membersIcon from "@mui/icons-material/People";
+import loansIcon from "@mui/icons-material/LibraryBooks"; 
 // SUPERTOKENS
 import React from "react";
 import SuperTokens, {
@@ -85,48 +79,30 @@ const App = () => (
         dashboard={Dashboard}
         
       >
-    <Resource name="Users" options={{label:"Users"}} 
-list={UsersList}
-create={UsersCreate}
-edit={UsersEdit}
+    <Resource name="books" options={{label:"Books"}} 
+list={booksList}
+create={booksCreate}
+edit={booksEdit}
+recordRepresentation="title"
+icon={booksIcon}/>
+<Resource name="authors" options={{label:"Authors"}} 
+list={authorsList}
+create={authorsCreate}
+edit={authorsEdit}
 recordRepresentation="name"
-icon={UsersIcon}/>
-<Resource name="Customers" options={{label:"Customers"}} 
-list={CustomersList}
-create={CustomersCreate}
-edit={CustomersEdit}
+icon={authorsIcon}/>
+<Resource name="members" options={{label:"Members"}} 
+list={membersList}
+create={membersCreate}
+edit={membersEdit}
 recordRepresentation="name"
-icon={CustomersIcon}/>
-<Resource name="Workouts" options={{label:"Workouts"}} 
-list={WorkoutsList}
-create={WorkoutsCreate}
-edit={WorkoutsEdit}
-recordRepresentation="type"
-icon={WorkoutsIcon}/>
-<Resource name="Nutrition" options={{label:"Nutrition"}} 
-list={NutritionList}
-create={NutritionCreate}
-edit={NutritionEdit}
-recordRepresentation="foodItem"
-icon={NutritionIcon}/>
-<Resource name="HealthMetrics" options={{label:"Health Metrics"}} 
-list={HealthMetricsList}
-create={HealthMetricsCreate}
-edit={HealthMetricsEdit}
-recordRepresentation="type"
-icon={HealthMetricsIcon}/>
-<Resource name="Notifications" options={{label:"Notifications"}} 
-list={NotificationsList}
-create={NotificationsCreate}
-edit={NotificationsEdit}
-recordRepresentation="type"
-icon={NotificationsIcon}/>
-<Resource name="SupportTickets" options={{label:"Support Tickets"}} 
-list={SupportTicketsList}
-create={SupportTicketsCreate}
-edit={SupportTicketsEdit}
-recordRepresentation="description"
-icon={SupportTicketsIcon}/>
+icon={membersIcon}/>
+<Resource name="loans" options={{label:"Loans"}} 
+list={loansList}
+create={loansCreate}
+edit={loansEdit}
+recordRepresentation="loanID"
+icon={loansIcon}/>
     <CustomRoutes noLayout>
       {/*This renders the login UI on the /auth route*/}
       {getSuperTokensRoutesForReactRouterDom(reactRouterDom)}
